@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import router from '@/router';
 import { ref, computed, onMounted } from 'vue'
 import FortuneWheel from 'vue-fortune-wheel'
 import 'vue-fortune-wheel/style.css'
@@ -41,14 +42,16 @@ const canvasOptions = {
   btnWidth: 140,
   borderColor: '#584b43',
   borderWidth: 6,
-  lineHeight: 30
+  lineHeight: 30,
+  fontSize: 30,
+  textLength: 7,
 }
 
 const prizesCanvas = [
   {
     id: 1, //* The unique id of each prize, an integer greater than 0
     name: 'HP', // Prize name, display value when type is canvas (this parameter is not needed when type is image)
-    value: 'HP\'s value', //* Prize value, return value after spinning
+    value: 0, //* Prize value, return value after spinning
     bgColor: '#fc0203', // Background color (no need for this parameter when type is image)
     color: '#ffffff', // Font color (this parameter is not required when type is image)
     probability: 16.6 //* Probability, up to 4 decimal places (the sum of the probabilities of all prizes
@@ -56,7 +59,7 @@ const prizesCanvas = [
   {
     id: 2,
     name: 'Attack',
-    value: 'Attacks\'s value',
+    value: 1,
     bgColor: '#f08132',
     color: '#ffffff',
     probability: 16.7
@@ -64,7 +67,7 @@ const prizesCanvas = [
   {
     id: 3,
     name: 'Defense',
-    value: 'Defense\'s value',
+    value: 2,
     bgColor: '#fad030',
     color: '#ffffff',
     probability: 16.7
@@ -72,7 +75,7 @@ const prizesCanvas = [
   {
     id: 4,
     name: 'Sp. Atk',
-    value: 'Sp. Atk\'s value',
+    value: 3,
     bgColor: '#6d8df4',
     color: '#ffffff',
     probability: 16.7
@@ -80,7 +83,7 @@ const prizesCanvas = [
   {
     id: 5,
     name: 'Sp. Def',
-    value: 'Sp. Def\'s value',
+    value: 4,
     bgColor: '#7bca53',
     color: '#ffffff',
     probability: 16.7
@@ -88,7 +91,7 @@ const prizesCanvas = [
   {
     id: 6,
     name: 'Speed',
-    value: 'Speed\'s value',
+    value: 5,
     bgColor: '#fa598b',
     color: '#ffffff',
     probability: 16.6
@@ -168,7 +171,7 @@ function onImageRotateStart () {
 }
 
 function onRotateEnd (prize: any) {
-  alert(prize.value)
+  router.push({path: 'game', query: {stat: prize.value}})
 }
 
 // function onChangePrize (id) {
