@@ -16,7 +16,8 @@ import CardItem from '../components/CardItem.vue';
       return {
         pokemon1: [],
         pokemon2: [],
-        stat_number: 0
+        stat_number: 0,
+        winner: 9999
       }
     },
     methods: {
@@ -24,19 +25,39 @@ import CardItem from '../components/CardItem.vue';
         const res1 = await fetch(`https://pokeapi.co/api/v2/pokemon/${num1}`);
         const finalRes1 = await res1.json();
         this.pokemon1 = finalRes1;
-
+        
 
 
         const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${num2}`);
         const finalRes2 = await res2.json();
         this.pokemon2 = finalRes2;
 
+        if (this.pokemon1.stats[this.stat_number].base_stat > this.pokemon2.stats[this.stat_number].base_stat){
+          this.winner = 1
+        } 
+        else if(this.pokemon1.stats[this.stat_number].base_stat < this.pokemon2.stats[this.stat_number].base_stat){
+          this.winner = 2
+        } 
+        else if(this.pokemon1.stats[this.stat_number].base_stat === this.pokemon2.stats[this.stat_number].base_stat){
+          this.winner = 0
+        } 
+        console.log("Winner is "+this.winner)
       },
       setUp() {
         const route = useRoute()
         if (route.query.stat) {
             this.stat_number = Number(route.query.stat);
         }
+      },
+      choosePokemon(pokemonId) {
+        if(pokemonId==this.winner){
+          console.log("ganaste")
+        }
+        else{
+          console.log("perdiste")
+        }
+        //sacar hidden values de los cardItem
+        //mostrar mono de ganaste o perdiste
       }
     },
     mounted() {
@@ -51,10 +72,10 @@ import CardItem from '../components/CardItem.vue';
     <main class="game">
         <h1>This is a Game page</h1>
         <div style="display: flex;">
-          <div v-if="pokemon1">
+          <div v-if="pokemon1" v-on:click="choosePokemon(1)">
             <CardItem :stat_number=stat_number :pokemon=pokemon1 />
           </div>
-          <div>
+          <div v-on:click="choosePokemon(2)">
             <CardItem :stat_number=stat_number :pokemon=pokemon2 />
           </div>
         </div>
