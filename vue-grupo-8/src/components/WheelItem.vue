@@ -17,7 +17,7 @@
 
     <!-- type: canvas -->
     <FortuneWheel
-      style="width: 500px; max-width: 100%;"
+      style="width: 700px; max-width: 100%;"
       :verify="canvasVerify"
       :canvas="canvasOptions"
       :prizes="prizesCanvas"

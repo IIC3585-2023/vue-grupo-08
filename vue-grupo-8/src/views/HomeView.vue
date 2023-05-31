@@ -1,14 +1,25 @@
-<script setup lang="ts">
-import Wheel from '../components/WheelItem.vue'
+<script lang="ts">
+import router from '@/router';
+
+  export default {
+    methods: {
+      start() {router.push({path: 'wheel'})},
+      about() {router.push({path: 'about'})}
+    }
+  }
 </script>
 
 <template>
-  <main id="main">
-    <div id="header">
-      HEADER
+  <main class="home">
+    <div class="homeHeader">
+      <h1> HEADER </h1>
     </div>
-    <div id="wheel">
-      <Wheel />
+    <div class="home">
+      <button class="homeButton" v-on:click="start()"> START </button>
+      <button class="homeButton" v-on:click="about()"> ABOUT </button>
     </div>  
+    <div class="homeFooter">
+      <h1>FOOTER</h1>
+    </div>
   </main>
 </template>

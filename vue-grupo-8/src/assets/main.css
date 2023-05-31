@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 div.card {
   background-color: aliceblue;
   margin: 2rem;
@@ -43,3 +47,105 @@ div.gameFooter {
   text-align: center;
   height: 25%;
 }
+
+div.wheelHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 25%;
+}
+
+div.wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 50%;
+}
+
+div.wheelFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 25%;
+}
+
+div.homeHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 15%;
+}
+
+div.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 70%;
+}
+
+div.homeFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 15%;
+}
+
+button.homeButton {
+  width: 150px;
+  height: 150px;
+  color: #ffcc03;
+  background-image: url('./homeButtonBG.png');
+  background-size: 125%;
+  background-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 2rem;
+  font-size: xx-large;
+  text-shadow: rgb(42, 117, 187) 2px 0px 0px, rgb(42, 117, 187) 1.75517px 0.958851px 0px, rgb(42, 117, 187) 1.0806px 1.68294px 0px, rgb(42, 117, 187) 0.141474px 1.99499px 0px, rgb(42, 117, 187) -0.832294px 1.81859px 0px, rgb(42, 117, 187) -1.60229px 1.19694px 0px, rgb(42, 117, 187) -1.97998px 0.28224px 0px, rgb(42, 117, 187) -1.87291px -0.701566px 0px, rgb(42, 117, 187) -1.30729px -1.5136px 0px, rgb(42, 117, 187) -0.421592px -1.95506px 0px, rgb(42, 117, 187) 0.567324px -1.91785px 0px, rgb(42, 117, 187) 1.41734px -1.41108px 0px, rgb(42, 117, 187) 1.92034px -0.558831px 0px;
+}
+
+div.aboutHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 20%;
+}
+
+div.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 60%;
+}
+
+
+div.aboutFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 20%;
+}
+
+
