@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import GameView from '../views/GameView.vue'
+import WheelView from '../views/WheelView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,11 @@ const router = createRouter({
       name: 'game',
       component: GameView,
       props: true
+    },
+    {
+      path: '/wheel',
+      name: 'wheel',
+      component: WheelView
     }
   ]
 })

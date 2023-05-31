@@ -1,15 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="about">
+    <div class="aboutHeader">
+      <h1> COMO JUGAR? </h1>
+    </div>
+    <div class="about">
+      <h1> BODY </h1>
+    </div>  
+    <div class="aboutFooter">
+      <h1>FOOTER</h1>
+    </div>
+  </main>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+

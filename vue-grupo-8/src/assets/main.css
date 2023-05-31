@@ -43,3 +43,101 @@ div.gameFooter {
   text-align: center;
   height: 25%;
 }
+
+div.wheelHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 25%;
+}
+
+div.wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 50%;
+}
+
+div.wheelFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 25%;
+}
+
+div.homeHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 15%;
+}
+
+div.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 70%;
+}
+
+div.homeFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 15%;
+}
+
+button.homeButton {
+  margin-bottom: 2rem;
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: blue;
+  border-radius: 1rem;
+}
+
+div.aboutHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: black;
+  height: 15%;
+}
+
+div.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 70%;
+}
+
+
+div.aboutFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 15%;
+}
+
+
