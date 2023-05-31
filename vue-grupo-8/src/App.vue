@@ -25,7 +25,7 @@ main.wheel {
 }
 
 main.home {
-  background-repeat: no-repeat;
+  background-image: url('./assets/homeBG.png');
 }
 
 main.about {
