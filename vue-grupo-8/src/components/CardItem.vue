@@ -16,7 +16,7 @@ export default {
         <img v-bind:src="pokemon!.sprites.front_default" alt="pokemon1 sprite" />
           
         <div>
-            {{ pokemon!.stats[stat_number].stat.name.toUpperCase() }}: {{pokemon!.stats[stat_number].base_stat }}
+            {{ pokemon!.stats[stat_number].stat.name.replaceAll("-", " ").toUpperCase() }}: {{pokemon!.stats[stat_number].base_stat }}
         </div>
     </div>
 </template>
