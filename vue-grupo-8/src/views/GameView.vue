@@ -49,14 +49,20 @@ import CardItem from '../components/CardItem.vue';
 
 <template>
     <main class="game">
-        <h1>This is a Game page</h1>
-        <div style="display: flex;">
-          <div v-if="pokemon1">
-            <CardItem :stat_number=stat_number :pokemon=pokemon1 />
-          </div>
-          <div>
-            <CardItem :stat_number=stat_number :pokemon=pokemon2 />
-          </div>
+      <div class="gameHeader"> 
+        <h1>TITULO</h1> 
+      </div>
+      <div class="game">
+        <div v-if="pokemon1">
+          <CardItem :stat_number=stat_number :pokemon=pokemon1 />
         </div>
-      </main>
+        <div class="separator"></div>
+        <div>
+          <CardItem :stat_number=stat_number :pokemon=pokemon2 />
+        </div>
+      </div>
+      <div class="gameFooter">
+
+      </div>
+    </main>
 </template>

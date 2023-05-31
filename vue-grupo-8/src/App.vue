@@ -13,7 +13,7 @@ main.game {
   background-image: url('./assets/battleBG.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 95vh;
+  height: 98vh;
   width: 100%;
 }
 </style>

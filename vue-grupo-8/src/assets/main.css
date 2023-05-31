@@ -1,6 +1,6 @@
 div.card {
   background-color: aliceblue;
-  margin: 1rem;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,4 +10,36 @@ div.card {
   border-radius: 8px;
   width: 10rem;
   height: 15rem;
+}
+
+div.separator {
+  width: 75%;
+}
+
+div.gameHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  color: white;
+  height: 25%;
+}
+
+div.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 50%;
+}
+
+div.gameFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 25%;
 }
