@@ -10,5 +10,5 @@
 ## Referencias
 ```
 > Setup basado en: https://vuejs.org/guide/quick-start.html#creating-a-vue-application
-> Rueda basad en: https://github.com/XiaoLin1995/vue-fortune-wheel/tree/master#readme
+> Rueda basada en: https://github.com/XiaoLin1995/vue-fortune-wheel/tree/master#readme
 ```
