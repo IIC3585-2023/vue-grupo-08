@@ -1,5 +1,6 @@
 <script lang="ts">
 import { useRoute } from 'vue-router';
+import CardItem from '../components/CardItem.vue';
 
     let num1 = Math.floor(Math.random() * (1010 - 1 + 1) + 1);
     let num2 = Math.floor(Math.random() * (1010 - 1 + 1) + 1);
@@ -8,6 +9,9 @@ import { useRoute } from 'vue-router';
         num2 = Math.floor(Math.random() * (1010 - 1 + 1) + 1);
     }
     export default{
+      components: {
+        CardItem
+      },
     data() {
       return {
         pokemon1: [],
@@ -21,9 +25,12 @@ import { useRoute } from 'vue-router';
         const finalRes1 = await res1.json();
         this.pokemon1 = finalRes1;
 
+
+
         const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${num2}`);
         const finalRes2 = await res2.json();
         this.pokemon2 = finalRes2;
+
       },
       setUp() {
         const route = useRoute()
@@ -41,10 +48,15 @@ import { useRoute } from 'vue-router';
 </script>
 
 <template>
-    <div class="about">
+    <main class="game">
         <h1>This is a Game page</h1>
-        <div v-if="pokemon1.stats && stat_number != undefined"> {{ pokemon1.stats[stat_number].stat.name }}</div>
-        <div v-if="pokemon1.stats && stat_number != undefined"> {{pokemon1.name}} {{pokemon1.stats[stat_number].base_stat }} </div>
-        <div v-if="pokemon2.stats && stat_number != undefined"> {{pokemon2.name}}  {{pokemon1.stats[stat_number].base_stat }} </div>
-    </div>
+        <div style="display: flex;">
+          <div v-if="pokemon1">
+            <CardItem :stat_number=stat_number :pokemon=pokemon1 />
+          </div>
+          <div>
+            <CardItem :stat_number=stat_number :pokemon=pokemon2 />
+          </div>
+        </div>
+      </main>
 </template>

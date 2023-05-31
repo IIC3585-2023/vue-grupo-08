@@ -1,0 +1,22 @@
+<script lang="ts">
+export default {
+    props: {
+        stat_number: Number,
+        pokemon: Object
+    }
+}
+</script>
+
+<template>
+    <div v-if="pokemon!.stats && stat_number != undefined" id="card_1" class="card">
+        <div>
+            {{ pokemon!.name.replaceAll("-", " ").toUpperCase() }}
+        </div>
+            
+        <img v-bind:src="pokemon!.sprites.front_default" alt="pokemon1 sprite" />
+          
+        <div>
+            {{ pokemon!.stats[stat_number].stat.name.toUpperCase() }}: {{pokemon!.stats[stat_number].base_stat }}
+        </div>
+    </div>
+</template>
