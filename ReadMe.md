@@ -3,6 +3,7 @@
 ## Como Correr
 ```
 > cd vue-grupo-8
+> nvm use 16
 > npm install
 > npm run dev
 ```
