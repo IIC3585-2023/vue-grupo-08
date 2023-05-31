@@ -17,7 +17,7 @@ import router from '@/router';
       <h1> BODY </h1>
     </div>  
     <div class="aboutFooter">
-      <button v-on:click="back()"> Volver </button>
+      <button class="homeButton" v-on:click="back()"> Volver </button>
     </div>
   </main>
 </template>
