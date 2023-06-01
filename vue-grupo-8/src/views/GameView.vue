@@ -16,7 +16,9 @@ import CardItem from '../components/CardItem.vue';
       return {
         pokemon1: [],
         pokemon2: [],
-        stat_number: 0
+        stat_number: 0,
+        sprite1: null,
+        sprite2: null,
       }
     },
     methods: {
@@ -25,11 +27,27 @@ import CardItem from '../components/CardItem.vue';
         const finalRes1 = await res1.json();
         this.pokemon1 = finalRes1;
 
+        let shiny1 = Math.floor(Math.random() * (4096 - 1 + 1) + 1);
+
+        if (shiny1 == 1) {
+          this.sprite1 = this.pokemon1.sprites.front_shiny;
+        } else {
+          this.sprite1 = this.pokemon1.sprites.front_default;
+        }
 
 
         const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${num2}`);
         const finalRes2 = await res2.json();
         this.pokemon2 = finalRes2;
+
+        
+        let shiny2 = Math.floor(Math.random() * (4096 - 1 + 1) + 1);
+
+        if (shiny2 == 1) {
+          this.sprite2 = this.pokemon2.sprites.front_shiny;
+        } else {
+          this.sprite2 = this.pokemon2.sprites.front_default;
+        }
 
       },
       setUp() {
@@ -54,11 +72,11 @@ import CardItem from '../components/CardItem.vue';
       </div>
       <div class="game">
         <div v-if="pokemon1">
-          <CardItem :stat_number=stat_number :pokemon=pokemon1 />
+          <CardItem :stat_number=stat_number :pokemon=pokemon1 :sprite=sprite1! />
         </div>
         <div class="separator"></div>
         <div>
-          <CardItem :stat_number=stat_number :pokemon=pokemon2 />
+          <CardItem :stat_number=stat_number :pokemon=pokemon2 :sprite=sprite2! />
         </div>
       </div>
       <div class="gameFooter">
