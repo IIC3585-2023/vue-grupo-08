@@ -23,6 +23,8 @@ import router from '@/router';
         winner: 9999,
         gameIsOnGoing: true,
         gameIsWon: false,
+        sprite1: null,
+        sprite2: null,
       }
     },
     methods: {
@@ -33,6 +35,14 @@ import router from '@/router';
 
         console.log(this.pokemon1.stats[this.stat_number].stat.name);
         document.getElementById("gameQuestion")!.innerHTML+=this.pokemon1.stats[this.stat_number].stat.name.replaceAll("-", " ").toUpperCase()+"?";
+        let shiny1 = Math.floor(Math.random() * (4096 - 1 + 1) + 1);
+
+        if (shiny1 == 1) {
+          this.sprite1 = this.pokemon1.sprites.front_shiny;
+        } else {
+          this.sprite1 = this.pokemon1.sprites.front_default;
+        }
+
 
         const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${num2}`);
         const finalRes2 = await res2.json();
@@ -48,6 +58,14 @@ import router from '@/router';
           this.winner = 0
         } 
         console.log("Winner is "+this.winner)
+        
+        let shiny2 = Math.floor(Math.random() * (4096 - 1 + 1) + 1);
+
+        if (shiny2 == 1) {
+          this.sprite2 = this.pokemon2.sprites.front_shiny;
+        } else {
+          this.sprite2 = this.pokemon2.sprites.front_default;
+        }
       },
       setUp() {
         const route = useRoute()
@@ -95,11 +113,12 @@ import router from '@/router';
       </div>
       <div class="game">
         <div class="leftPokemon" v-if="pokemon1" v-on:click="choosePokemon(1)">
-          <CardItem :stat_number=stat_number :pokemon=pokemon1 />
+          <CardItem :stat_number=stat_number :pokemon=pokemon1 :sprite=sprite1! />
         </div>
         <div class="separator"></div>
         <div class="rightPokemon" v-on:click="choosePokemon(2)">
-          <CardItem :stat_number=stat_number :pokemon=pokemon2 />
+        <div>
+          <CardItem :stat_number=stat_number :pokemon=pokemon2 :sprite=sprite2! />
         </div>
       </div>
       <div class="gameFooter">
