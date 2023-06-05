@@ -16,6 +16,20 @@ div.card {
   height: 15rem;
 }
 
+div.fullcard {
+  background-color: aliceblue;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-top;
+  text-align: center;
+  border-radius: 8px;
+  width: 15rem;
+  height: 20rem;
+}
+
 div.separator {
   width: 75%;
 }

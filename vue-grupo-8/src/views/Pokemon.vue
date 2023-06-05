@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useRoute } from 'vue-router';
-import CardItem from '../components/CardItem.vue';
+import CardItem from '../components/FullCard.vue';
 import { store } from '../stores/store.js';
 import router from '@/router';
 
@@ -63,7 +63,7 @@ export default{
       <h1 class="homeTitle"> CHOOSE YOUR POKEMON </h1>
     </div>
     <div class="about">
-        <CardItem :stat_number=1 :pokemon=pokemonx :sprite=spritex! />
+        <CardItem :pokemon=pokemonx :sprite=spritex! />
 
       <h1 class="homeTitle" id="nameOutput">
       </h1>
