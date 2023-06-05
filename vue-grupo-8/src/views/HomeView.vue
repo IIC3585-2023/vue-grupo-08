@@ -13,7 +13,7 @@ import { store } from '../stores/store.js';
       about() {router.push({path: 'about'})},
       create() {router.push({path: 'team'})},
       getScore(){
-        document.getElementById("score")!.innerHTML= "User Guess Ratio: "+ store.gamesWon/store.gamesPlayed;
+        document.getElementById("score")!.innerHTML= "User Guess Ratio: "+ Math.round(store.gamesWon/store.gamesPlayed* 100) / 100;
         document.getElementById("wins")!.innerHTML= "User Correct Guesses: "+ store.gamesWon;
       }
     },
