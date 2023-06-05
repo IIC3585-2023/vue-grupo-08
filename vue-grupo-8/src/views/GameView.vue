@@ -10,6 +10,7 @@ import router from '@/router';
       },
     data() {
       return {
+        store,
         pokemon1: [],
         pokemon2: [],
         stat_number: 0,
@@ -80,13 +81,16 @@ import router from '@/router';
         document.getElementById("gameQuestion")!.innerHTML="";
         if(pokemonId===this.winner){
           this.gameIsWon=true;
+          store.WonAGame();
           //document.getElementById("gameResult")!.src="../assets/YouLost.png";  //"../assets/youWon.png" 
         }
+        store.PlayedAGame();
         store.gameIsOnGoing=false;
         this.gameIsOnGoing=false;
         //mostrar mono de ganaste o perdiste
       },
-      start() {router.push({path: '/'})}      
+      start() {router.push({path: '/'})},
+      restart() {router.push({path: '/wheel'})}     
     },
     mounted() {
       
@@ -117,7 +121,10 @@ import router from '@/router';
       </div>
       <div class="gameFooter">
         <button class="homeButton" v-if="gameIsOnGoing" v-on:click="choosePokemon(0)"> TIE </button>
-        <button class="homeButton" v-if="!gameIsOnGoing" v-on:click="start()"> GO BACK </button>
+        <div class="gameFooter">
+          <button class="homeButton" v-if="!gameIsOnGoing" v-on:click="start()"> GO HOME </button>
+          <button class="homeButton" v-if="!gameIsOnGoing" v-on:click="restart()"> GO AGAIN </button>
+        </div>  
       </div>
     </main>
 </template>
